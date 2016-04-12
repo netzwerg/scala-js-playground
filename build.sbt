@@ -5,10 +5,11 @@ name := "Scala.js Playground"
 scalaVersion := "2.11.8"
 
 libraryDependencies ++= Seq(
-  "org.scala-js" %%% "scalajs-dom" % "0.9.0",
-  "com.lihaoyi" %%% "scalatags" % "0.5.4",
-  "org.singlespaced" %%% "scalajs-d3" % "0.3.1"
+  "com.thoughtworks.binding" %%% "dom" % "4.0.1",
+  "org.scala-lang" % "scala-reflect" % "2.11.8" // explicit dependency to fix version collision warning
 )
+
+addCompilerPlugin("org.scalamacros" % "paradise" % "2.1.0" cross CrossVersion.full)
 
 persistLauncher in Compile := true
 
